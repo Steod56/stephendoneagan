@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Images Side by Side</title>
+    <style>
+        /* Style for centering content */
+        body {
+            text-align: center; /* Centers all content horizontally */
+            background-color: black; /* Set background to black */
+            color: white; /* Set text color to white */
+        }
+
+        /* Style for the image container */
+        .image-container {
+            display: flex;
+            justify-content: center; /* Align the images in the center */
+            gap: 20px; /* Add space between images */
+            margin-top: 20px;
+        }
+
+        /* Center and resize individual images */
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Style for centering the logo and making it larger */
+        .logo-container {
+            display: flex;
+            justify-content: center; /* Center the logo */
+            margin-bottom: 20px; /* Add some space below the logo */
+        }
+
+        .logo-container img {
+            width: 100%; /* Make the logo fit the width of the container */
+            max-width: 1200px; /* Set a maximum width for the logo */
+            height: auto; /* Keep the aspect ratio of the logo */
+        }
+
+        /* Center the video */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        /* Make the video larger */
+        video {
+            width: 800px; /* Adjust width */
+            height: 450px; /* Adjust height */
+        }
+
+        /* Slideshow styles */
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+            margin-top: 40px;
+        }
+
+        .slides {
+            display: none;
+        }
+
+        .slides img {
+            width: 100%;
+            height: auto;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .dot-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Bogroll Entertainment</h1>
+
+<!-- Logo container -->
+<div class="logo-container">
+    <img src="logo.jpg" alt="logo">
+</div>
+
+<!-- Text for the images -->
+<div class="text-info">
+    <h2>3D Game</h2>
+    <p>This was made in Maya 3D</p>
+</div>
+
+<!-- Images in a row -->
+<div class="image-container">
+    <div class="column">
+        <img src="hall.jpg" alt="hall" style="width:75%">
+        <div class="text-info">
+            <h2>Hallway view 1</h2>
+            <p>This image represents the hallway of the game, rendered to showcase the lighting and details done in Maya.</p>
+        </div>
+    </div>
+
+    <div class="column">
+        <img src="hall2.jpg" alt="hall2" style="width:75%">
+        <div class="text-info">
+            <h2>Hallway view 2</h2>
+            <p>The screws and door frames were designed here.</p>
+        </div>
+    </div>
+
+    <div class="column">
+        <img src="hall3.png" alt="hall3" style="width:75%">
+        <div class="text-info">
+            <h2>View of the house</h2>
+            <p>The mesh was created in Maya.</p>
+        </div>
+    </div>
+
+    <div class="column">
+        <img src="clayman.jpg" alt="clayman" style="width:75%">
+        <div class="text-info">
+            <h2>ClayMan</h2>
+            <p>The Character was made in Maya</p>
+        </div>
+    </div>
+</div>
+
+<!-- Slideshow section -->
+<div class="slideshow-container">
+
+<!-- Text for the images -->
+<div class="text-info">
+    <h2>3D Bench</h2>
+    <p>This was made in Maya 3D for the game I am working on, it is a simple backyard bench</p>
+</div>
+
+    <div class="slides">
+        <img src="lower-veiw-4.jpg" alt="Slide 1">
+    </div>
+
+    <div class="slides">
+        <img src="bottom-veiw.jpg" alt="Slide 2">
+    </div>
+
+    <div class="slides">
+        <img src="top-veiw.jpg" alt="Slide 3">
+    </div>
+
+    <div class="slides">
+        <img src="bottom-veiw-6.jpg" alt="Slide 4">
+    </div>
+
+    <div class="slides">
+        <img src="top-veiw-2.jpg" alt="Slide 5">
+    </div>
+
+   <div class="slides">
+        <img src="Mid-veiw-7.jpg" alt="Slide 6">
+    </div>
+
+    <!-- Navigation buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+<!-- Dots for image navigation -->
+<div class="dot-container">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+    <span class="dot" onclick="currentSlide(5)"></span>
+    <span class="dot" onclick="currentSlide(6)"></span>
+</div>
+
+<!-- Video section -->
+<div class="text-info">
+    <h2>2D Game</h2>
+    <p>This 2D game, developed in Construct 3, is set in Ballymun and features all original artwork created in Photoshop. The animations were designed using frame-by-frame techniques in Photoshop’s timeline, bringing the visuals to life. This project was a creative journey for me, allowing me to craft something truly unique from my imagination, and I thoroughly enjoyed every step of the process.</p>
+</div>
+
+<div class="video-container">
+    <video controls autoplay>
+        <source src="Bogroll.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("slides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+</script>
+
+
+
+</body>
+</html>
